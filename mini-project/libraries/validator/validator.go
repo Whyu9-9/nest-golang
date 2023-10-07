@@ -58,6 +58,9 @@ func ErrorFormTranslator(err error) interface{} {
 
 		case "email":
 			fields[err.Field()] = "is not valid email"
+			
+		case "numeric":
+			fields[err.Field()] = "is not valid numeric val"
 
 		case "gte":
 			fields[err.Field()] = fmt.Sprintf("value must be greater than equal %s", err.Param())
